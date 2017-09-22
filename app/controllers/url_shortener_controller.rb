@@ -11,6 +11,7 @@ class UrlShortenerController < ApplicationController
     if @url.save
       render 'show'
     else
+      flash[:danger] = 'That was an invalid URI.'
       render 'new'
     end
   end

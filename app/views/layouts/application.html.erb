@@ -10,6 +10,14 @@
 
   <body>
     <h1>Welcome to Bertly. I'm Bert.</h1>
+    <% if flash[:danger].present? -%>
+      <section id='flash-section'>
+        <p class="flash-danger" style="color:red">
+          <%= flash.now[:danger] -%>
+        </p>
+      </section>
+    <% end -%>
+    <%= image_tag "https://vignette.wikia.nocookie.net/muppet/images/e/e1/Bert_smile.png/revision/latest?cb=20110630173259" %>
     <%= yield %>
   </body>
 </html>
