@@ -17,7 +17,7 @@ class UrlShortenerController < ApplicationController
   end
 
   def show
-    @url = Url.find_by shortened_uri: params[:shortened_uri]
+    @url = Url.find params[:id]
     redirect_to @url.uri_string
   end
 
