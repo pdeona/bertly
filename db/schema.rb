@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922223244) do
+ActiveRecord::Schema.define(version: 20170923012654) do
 
   create_table "urls", force: :cascade do |t|
     t.string "uri_string"
     t.string "shortened_uri"
+    t.index ["shortened_uri"], name: "index_urls_on_shortened_uri", unique: true
   end
 
 end
