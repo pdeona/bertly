@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   get '/:shortened_uri', to: 'url_shortener#show'
 
-  # get '/:uri_string', to: 'url_shortener#create'
+  get '/:uri_string', to: 'url_shortener#create'
 
 end
