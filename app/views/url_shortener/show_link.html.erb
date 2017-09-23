@@ -1,3 +1,4 @@
 <h4>enjoy your new link. put it up somewhere nice.</h4>
 
-<%= link_to root_url + @url.shortened_uri %>
+<% link = (root_url + @url.shortened_uri) %>
+<%= link_to link, link %>
