@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   post '/', to: 'url_shortener#create'
 
-  resources :url_shortener, only: [:new, :create]
-
   get '/:id', to: 'url_shortener#show'
 
 end
