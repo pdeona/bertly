@@ -9,7 +9,7 @@ class UrlShortenerController < ApplicationController
     @url = Url.new(url_shortener_params)
     @url.shortened_uri = short_url
     if @url.save
-      render 'show'
+      render 'show_link'
     else
       flash[:danger] = 'That was an invalid URI.'
       render 'new'
