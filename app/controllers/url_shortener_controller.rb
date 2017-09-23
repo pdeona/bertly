@@ -6,7 +6,13 @@ class UrlShortenerController < ApplicationController
   end
 
   def create
-    @url = Url.new(url_shortener_params)
+    if params.include? :url_shortener
+      @url = Url.new(url_shortener_params)
+    else
+      uri_string = params[:protocol] + '//' + params[:uri_domain] + '.' + params[:uri_substring]
+      @url = Url.new(uri_string: uri_string)
+      p @url
+    end
     @url.shortened_uri = short_url
     if @url.save
       render 'show_link', url: @url

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   get '/:shortened_uri', to: 'url_shortener#show'
 
-  get '/:uri_string', { controller: 'url_shortener', action: :create, constraints: { url_shortener: {uri_string: :string} } }
+  get '/:protocol/*uri_domain.*uri_substring', to: 'url_shortener#create'
 
 end
